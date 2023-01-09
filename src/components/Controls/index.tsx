@@ -65,6 +65,7 @@ function Controls({ handleViewImages }: Props) {
   return (
     <div className="App__Controls" data-testid="controls">
       <Select
+        id="breedSelect"
         options={breeds}
         value={selectedBreed}
         setSelected={(value) => setSelectedBreed(value)}
@@ -72,6 +73,7 @@ function Controls({ handleViewImages }: Props) {
       />
       {subBreeds.length > 0 ? (
         <Select
+          id="subBreedSelect"
           options={subBreeds}
           value={selectedSubBreed}
           setSelected={(value) => setSelectedSubBreed(value)}
@@ -79,6 +81,7 @@ function Controls({ handleViewImages }: Props) {
         />
       ) : null}
       <Select
+        id="numberOfImagesSelect"
         options={["1", "2", "3", "4", "5", "6", "7", "8"]}
         value={selectedNumberOfImages}
         setSelected={(value) => setSelectedNumberOfImages(value)}

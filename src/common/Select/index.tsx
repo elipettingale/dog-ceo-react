@@ -6,11 +6,14 @@ interface Props {
   value: string;
   setSelected: (newValue: string) => void;
   hasError: boolean;
+  id?: string;
 }
 
-function Select({ options, value, setSelected, hasError }: Props) {
+function Select({ options, value, setSelected, hasError, id }: Props) {
   return (
     <select
+      id={id}
+      data-testid={id}
       className={"App__Select " + (hasError ? "App__Select--error" : "")}
       onChange={(event) => setSelected(event.target.value)}
     >
