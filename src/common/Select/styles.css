@@ -8,3 +8,7 @@
   background-color: #fff;
   margin-right: 1rem;
 }
+
+.App__Select--error {
+  border: 2px solid rgb(179, 3, 3);
+}

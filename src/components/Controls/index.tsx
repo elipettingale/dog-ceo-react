@@ -17,6 +17,8 @@ function Controls({ handleViewImages }: Props) {
   const [selectedNumberOfImages, setSelectedNumberOfImages] =
     useState<string>("");
 
+  const [errors, setErrors] = useState<string[]>([]);
+
   useEffect(() => {
     getBreeds().then((breeds) => {
       setBreeds(breeds);
@@ -35,14 +37,29 @@ function Controls({ handleViewImages }: Props) {
     setSelectedSubBreed("");
   }, [selectedBreed]);
 
-  const handleOnClick = () => {
-    // todo: validate
+  const selectionsAreValid = () => {
+    let newErrors = [];
 
-    handleViewImages({
-      breed: selectedBreed,
-      subBreed: selectedSubBreed,
-      numberOfImages: selectedNumberOfImages,
-    });
+    if (selectedBreed === "") {
+      newErrors.push("breed");
+    }
+
+    if (selectedNumberOfImages === "") {
+      newErrors.push("numberOfImages");
+    }
+
+    setErrors(newErrors);
+    return newErrors.length === 0;
+  };
+
+  const handleOnClick = () => {
+    if (selectionsAreValid()) {
+      handleViewImages({
+        breed: selectedBreed,
+        subBreed: selectedSubBreed,
+        numberOfImages: selectedNumberOfImages,
+      });
+    }
   };
 
   return (
@@ -51,29 +68,27 @@ function Controls({ handleViewImages }: Props) {
         options={breeds}
         value={selectedBreed}
         setSelected={(value) => setSelectedBreed(value)}
+        hasError={errors.includes("breed")}
       />
       {subBreeds.length > 0 ? (
         <Select
           options={subBreeds}
           value={selectedSubBreed}
           setSelected={(value) => setSelectedSubBreed(value)}
+          hasError={errors.includes("subBreed")}
         />
       ) : null}
       <Select
         options={["1", "2", "3", "4", "5", "6", "7", "8"]}
         value={selectedNumberOfImages}
         setSelected={(value) => setSelectedNumberOfImages(value)}
+        hasError={errors.includes("numberOfImages")}
       />
       <Button
         text="View Images"
         disabled={false}
         onClick={() => handleOnClick()}
       />
-      <div className="debug--remove">
-        <p>Breed: {selectedBreed}</p>
-        <p>SubBreed: {selectedSubBreed}</p>
-        <p>NumberOfImages: {selectedNumberOfImages}</p>
-      </div>
     </div>
   );
 }

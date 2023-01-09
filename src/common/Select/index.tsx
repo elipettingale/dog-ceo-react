@@ -5,12 +5,13 @@ interface Props {
   options: readonly string[];
   value: string;
   setSelected: (newValue: string) => void;
+  hasError: boolean;
 }
 
-function Select({ options, value, setSelected }: Props) {
+function Select({ options, value, setSelected, hasError }: Props) {
   return (
     <select
-      className="App__Select"
+      className={"App__Select " + (hasError ? "App__Select--error" : "")}
       onChange={(event) => setSelected(event.target.value)}
     >
       <option></option>
