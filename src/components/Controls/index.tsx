@@ -63,7 +63,7 @@ function Controls({ handleViewImages }: Props) {
   };
 
   return (
-    <div className="App__Controls">
+    <div className="App__Controls" data-testid="controls">
       <Select
         options={breeds}
         value={selectedBreed}

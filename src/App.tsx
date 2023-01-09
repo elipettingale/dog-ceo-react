@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Result from "./common/Result";
 import Controls from "./components/Controls";
+import Results from "./components/Results";
 import { getImages } from "./services/dogApiService";
 import { SelectedOptions } from "./types/SelectedOptions";
 
@@ -19,17 +20,13 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App" data-testid="app">
       <Controls
         handleViewImages={(selectedOptions) =>
           handleViewImages(selectedOptions)
         }
       />
-      <div className="App__Results">
-        {results.map((result) => {
-          return <Result key={result} image={result} />;
-        })}
-      </div>
+      <Results results={results} />
     </div>
   );
 }
