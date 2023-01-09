@@ -2,7 +2,7 @@ import * as React from "react";
 import "./styles.css";
 
 interface Props {
-  options: readonly (string | number)[];
+  options: readonly string[];
   value: string;
   setSelected: (newValue: string) => void;
 }
