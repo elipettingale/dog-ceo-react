@@ -21,7 +21,9 @@ function App() {
   return (
     <div className="App">
       <Controls
-        handleViewImages={(selections) => handleViewImages(selections)}
+        handleViewImages={(selectedOptions) =>
+          handleViewImages(selectedOptions)
+        }
       />
       <div className="App__Results">
         {results.map((result) => {
