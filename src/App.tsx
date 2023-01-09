@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Select from "./common/Select";
 import Button from "./common/Button";
+import Result from "./common/Result";
 
 function App() {
   return (
@@ -23,27 +24,9 @@ function App() {
         />
       </div>
       <div className="App__Results">
-        <div
-          className="App__Result"
-          style={{
-            backgroundImage:
-              "url(https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg)",
-          }}
-        ></div>
-        <div
-          className="App__Result"
-          style={{
-            backgroundImage:
-              "url(https://images.dog.ceo/breeds/hound-afghan/n02088094_1007.jpg)",
-          }}
-        ></div>
-        <div
-          className="App__Result"
-          style={{
-            backgroundImage:
-              "url(https://images.dog.ceo/breeds/hound-afghan/n02088094_1023.jpg)",
-          }}
-        ></div>
+        <Result image="https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg" />
+        <Result image="https://images.dog.ceo/breeds/hound-afghan/n02088094_1007.jpg" />
+        <Result image="https://images.dog.ceo/breeds/hound-afghan/n02088094_1023.jpg" />
       </div>
     </div>
   );
