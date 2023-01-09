@@ -14,11 +14,11 @@ export async function getSubBreeds(breed: string)
     return response.data.message;
 }
 
-export async function getImages(breed : string, subBreed: string | null, numberOfImages: number)
+export async function getImages(breed : string, subBreed: string, numberOfImages: string)
 {
     let url = `/breed/${breed}`;
 
-    if (subBreed !== null) {
+    if (subBreed !== '') {
         url += `/${subBreed}`;
     }
 

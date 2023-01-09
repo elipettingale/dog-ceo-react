@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import Select from "../../common/Select";
 import Button from "../../common/Button";
 import { getBreeds, getSubBreeds } from "../../services/dogApiService";
+import { SelectedOptions } from "../../types/SelectedOptions";
 
 interface Props {
-  handleViewImages: ({}) => void;
+  handleViewImages: (selections: SelectedOptions) => void;
 }
 
 function Controls({ handleViewImages }: Props) {
