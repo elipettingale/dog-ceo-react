@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import Result from "./common/Result";
 import Controls from "./components/Controls";
 import Results from "./components/Results";
 import { getImages } from "./services/dogApiService";
