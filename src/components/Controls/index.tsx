@@ -52,11 +52,13 @@ function Controls({ handleViewImages }: Props) {
         value={selectedBreed}
         setSelected={(value) => setSelectedBreed(value)}
       />
-      <Select
-        options={subBreeds}
-        value={selectedSubBreed}
-        setSelected={(value) => setSelectedSubBreed(value)}
-      />
+      {subBreeds.length > 0 ? (
+        <Select
+          options={subBreeds}
+          value={selectedSubBreed}
+          setSelected={(value) => setSelectedSubBreed(value)}
+        />
+      ) : null}
       <Select
         options={["1", "2", "3", "4", "5", "6", "7", "8"]}
         value={selectedNumberOfImages}
