@@ -1,38 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 5%;
+  background-color: rgb(244, 244, 244);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App__Select {
+  border: 1px solid rgb(41, 41, 41);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+
+  cursor: pointer;
+  height: 2rem;
+  background-color: #fff;
+  margin-right: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.App__Button {
+  height: 2rem;
+  background: rgb(85, 85, 128);
   color: white;
+  border: 1px solid rgb(41, 41, 41);
+  border-radius: 0.25em;
+  padding: 0.25em 1em;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.App__Button:not(:disabled):hover {
+  background: rgb(134, 134, 187);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App__Button:disabled {
+  opacity: 0.5;
+}
+
+.App__Results {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.App__Result {
+  display: block;
+  padding-top: 100%;
+  width: 100%;
+  background-size: cover;
 }
