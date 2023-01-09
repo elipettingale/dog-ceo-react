@@ -35,6 +35,16 @@ function Controls({ handleViewImages }: Props) {
     setSelectedSubBreed("");
   }, [selectedBreed]);
 
+  const handleOnClick = () => {
+    // todo: validate
+
+    handleViewImages({
+      breed: selectedBreed,
+      subBreed: selectedSubBreed,
+      numberOfImages: selectedNumberOfImages,
+    });
+  };
+
   return (
     <div className="App__Controls">
       <Select
@@ -55,13 +65,7 @@ function Controls({ handleViewImages }: Props) {
       <Button
         text="View Images"
         disabled={false}
-        onClick={() =>
-          handleViewImages({
-            breed: selectedBreed,
-            subBreed: selectedSubBreed,
-            numberOfImages: selectedNumberOfImages,
-          })
-        }
+        onClick={() => handleOnClick()}
       />
       <div className="debug--remove">
         <p>Breed: {selectedBreed}</p>
