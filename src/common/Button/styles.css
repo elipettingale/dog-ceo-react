@@ -1,0 +1,17 @@
+.App__Button {
+  height: 2rem;
+  background: rgb(85, 85, 128);
+  color: white;
+  border: 1px solid rgb(41, 41, 41);
+  border-radius: 0.25em;
+  padding: 0.25em 1em;
+  cursor: pointer;
+}
+
+.App__Button:not(:disabled):hover {
+  background: rgb(134, 134, 187);
+}
+
+.App__Button:disabled {
+  opacity: 0.5;
+}

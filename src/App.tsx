@@ -1,23 +1,26 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import Select from "./common/Select";
+import Button from "./common/Button";
 
 function App() {
   return (
     <div className="App">
       <div className="App__Selects">
-        <select className="App__Select">
-          <option>Hound</option>
-        </select>
-        <select className="App__Select">
-          <option>Basset</option>
-        </select>
-        <select className="App__Select">
-          <option>3</option>
-        </select>
-        <button className="App__Button" disabled={true}>
-          View Images
-        </button>
+        <Select options={["Hound"]} value={""} setSelected={(value) => {}} />
+        <Select options={["Basset"]} value={""} setSelected={(value) => {}} />
+        <Select
+          options={Array.from(Array(10).keys())}
+          value={""}
+          setSelected={(value) => {}}
+        />
+        <Button
+          text="View Images"
+          disabled={false}
+          onClick={() => {
+            console.log("click");
+          }}
+        />
       </div>
       <div className="App__Results">
         <div
